@@ -68,8 +68,3 @@ An important part of MLOps is to automate workflows via Pipelines. For this proj
 ## Screen Recording
 
 Here's a link to a video explaining the different parts of the project: [Operationalizing ML Screencast - Jacques T](https://www.youtube.com/watch?v=mH5c6UD4-Vk&feature=youtu.be)
-
-***
-
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
