@@ -27,6 +27,8 @@ Our project will follow the following steps:
 
 ![Steps to Operationalizing ML](./images/steps-to-operationalizing-ml.png)
 
+(Ref: https://www.udacity.com/course/machine-learning-engineer-for-microsoft-azure-nanodegree--nd00333)
+
 ***
 
 ## Key Steps and Screenshots
