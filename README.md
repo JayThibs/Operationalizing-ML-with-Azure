@@ -5,7 +5,7 @@
    * [Architectural Diagram](#Architectural-Diagram)
    * [Key Steps and Screenshots](#Key-Steps-and-Screenshots)
    * [Screen Recording](#Screen-Recording)
-   * [Future Improvements](#Future-Improvements)
+   * [Future Work](#Future-Work)
 
 ***
 
