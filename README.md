@@ -34,7 +34,7 @@ Our project will follow the following steps:
 ## Key Steps and Screenshots
 
    * [Step 1 - Authentication](#Step-1---Authentication)
-   * [Step 2 - Automated ML Experiment (AutoML)](#Step-2---Automated-ML-Experiment-(AutoML))
+   * [Step 2 - Automated ML Experiment (AutoML)](#Step-2---Automated-ML-Experiment--AutoML-)
    * [Step 3 - Deploy the best model](#Step-1---Authentication)
    * [Step 4 - Enable logging](#Step-1---Authentication)
    * [Step 5 - Swagger Documentation](#Step-1---Authentication)
