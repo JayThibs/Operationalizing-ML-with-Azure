@@ -71,21 +71,33 @@ And for the preprocessed data:
 
 ![preprocessed-data-feature-importance.png](./images/preprocessed-data-feature-importance.png)
 
-
-
-![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
-
 ### **3. Deploy the best model** 
 
 **Key point:** Deploying means that we are creating an endpoint (in this case, REST API) that allows us to interact with the HTTP API service. For this project, we will allow the HTTP API service to interact with the best AutoML model by sending POST requests to the endpoint.
+
+By clicking the Deploy tab in our best model's page (Run 85), we deployed our model. As we can see in the image below, the deployment state is healthy, meaning that our model has been deployed and the REST endpoint is active. We will be interacting with our deployed model in step 6.
+
+![automl-best-model-endpoint.png](./images/automl-best-model-endpoint.png)
+
+As we can see, Application Insights is enabled. This is something we do in the next step. It is possible to deploy the model with Application Insights turned on, but we did it via our local command-line interface for this project.
 
 ### **4. Enable logging** 
 
 **Key point:** In Azure, we can enable logging by enabling Application Insights. Application Insights is a useful tool to detect anomalies and visualize performance of our deployed model. We can enable Application Insights when we are deploying our model, but we will enable it via our CLI for this project.
 
+Before we can enable Application Insights, we need to download the config.json file from the Azure Machine Learning Studio and put it in our base (local) directory where we will run the code.
+
+To enable Application Insights in our CLI, we need to create a logs.py file. In the file, we include `Workspace.from_config` to get the configuration information for our workspace in Azure. We also include the name of our deployed model.
+
+To enable Application Insights, we need to make sure to include the following line of code: `service.update(enable_app_insights=True)`, where `service` is the existing web service and includes the information of our workspace and deployed model.
+
+![logs-dot-py.png](./images/logs-dot-py.png)
+
 ### **5. Swagger Documentation** 
 
 **Key point:** Swagger is a framework for describing an API using a common language that everyone can understand. Azure provides a Swagger JSON file for deployed models that can look up in your IDE or in the Swagger UI. Any mistakes are flagged, and alternatives are suggested. At the heart of Swagger is its specification. The Swagger specification is the rulebook that standardizes API practices (how to define parameters, paths, responses, models, etc). And every other part of Swagger is just a way of appropriating or creating API documentation that works with these rules. Reference: [What is Swagger and Why Does it Matter?](https://blog.readme.com/what-is-swagger-and-why-it-matters/)
+
+![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
 
 ### **6. Consume model endpoints** 
 
