@@ -33,6 +33,13 @@ Our project will follow the following steps:
 
 ## Key Steps and Screenshots
 
+   * [1. Authentication](#1.-Authentication*)
+   * [Architectural Diagram](#Architectural-Diagram)
+   * [Key Steps and Screenshots](#Key-Steps-and-Screenshots)
+   * [Screen Recording](#Screen-Recording)
+   * [Comments and future improvements](#Comments-and-future-improvements)
+   * [References](#References)
+
 We will now go through the key steps of the entire project.
 
 Here's a preview of the dataset we have loaded into AzureML and will be working with:
