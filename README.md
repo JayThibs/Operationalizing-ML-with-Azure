@@ -93,6 +93,13 @@ To enable Application Insights, we need to make sure to include the following li
 
 ![logs-dot-py.png](./images/logs-dot-py.png)
 
+Now that we've created our logs.py file, we can run it to enable Application Insights.
+
+![python-logs-dot-py.png](./images/python-logs-dot-py.png)
+
+![logs-dot-py.png](./images/logs-dot-py.png)
+
+
 ### **5. Swagger Documentation** 
 
 **Key point:** Swagger is a framework for describing an API using a common language that everyone can understand. Azure provides a Swagger JSON file for deployed models that can look up in your IDE or in the Swagger UI. Any mistakes are flagged, and alternatives are suggested. At the heart of Swagger is its specification. The Swagger specification is the rulebook that standardizes API practices (how to define parameters, paths, responses, models, etc). And every other part of Swagger is just a way of appropriating or creating API documentation that works with these rules. Reference: [What is Swagger and Why Does it Matter?](https://blog.readme.com/what-is-swagger-and-why-it-matters/)
