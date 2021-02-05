@@ -48,7 +48,7 @@ Here's a preview of the dataset we have loaded into AzureML and will be working 
 
 ![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
 
-### **1. Authentication** 
+## **1. Authentication** 
 
 **Key point:** Authentication is important for giving users different levels of privileges. In our case, we are using the Udacity workspace, so we cannot create a Service Principal. Therefore, can skip this step.
 
