@@ -35,33 +35,65 @@ Our project will follow the following steps:
 
 We will now go through the key steps of the entire project.
 
+Here's a preview of the dataset we have loaded into AzureML and will be working with:
+
+![bank-marketing-dataset-info.png](./images/bank-marketing-dataset-info.png)
+
+![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
+
 ### **1. Authentication** 
 
-Authentication is important for giving users different levels of privileges. In our case, we are using the Udacity workspace, so we cannot create a Service Principal. Therefore, can skip this step.
+**Key point:** Authentication is important for giving users different levels of privileges. In our case, we are using the Udacity workspace, so we cannot create a Service Principal. Therefore, can skip this step.
 
 ### **2. Automated ML Experiment (AutoML)** 
 
-AutoML allows you to automatically run a series of different machine learning algorithms and parameters for you. In this project, we provide AutoML some custom configurations, run it, then choose the best model.
+**Key point:** AutoML allows you to automatically run a series of different machine learning algorithms and parameters for you. In this project, we provide AutoML some custom configurations, run it, then choose the best model.
+
+After AutoML has finished all of its runs, we can start working with the best model out of all the models. In this case, there were 85 runs coompleted and the best model was a Voting Ensemble with an accuracy of 91.866% and AUC macro of 94.615%.
+
+![automl-model-runs.png](./images/automl-model-runs.png)
+
+![automl-best-model-run.png](./images/automl-best-model-run.png)
+
+![automl-best-model-metrics.png](./images/automl-best-model-metrics.png)
+
+One of the benefits of AutoML (and AzureML in general) is that we can quickly get a better understand of our data as well as what the model is doing to predict the target variable(s). The Explanations tab for a given model can save a data scientist a lot of time upfront because it helps them quickly identify issues with the data that may hinder performance or lead to dangerous outcomes (performing poorly on certain groups of people and performing exceptionally with others). 
+
+On a personal note, I think the Explanations tab can be quite useful to nudge data scientist to consider the harmful effects of their models. It's quite easy to overlook this part of the process since you may have outside pressure to get things done or all of the courses you took never really prepared you for looking at harmful effects of models and correcting them. Therefore, Explanations may ease people into thinking more about the issues with their models. If you focus too much on total model performance, you won't end up looking at the data in your dataset that perform much more poorly than the average. Yes, paying attention to these issues is likely to increase model performance, but it's essential to take into consideration in a production environment because some subsets of your datasets may carry more importance than others. It may be more important to have 90% accuracy for all subsets of your data than it is to have 95% for most and 80% for others. Explanations makes that process quick and easy.
+
+![best-model-performance-explanation.png](./images/best-model-performance-explanation.png)
+
+We can even see which raw and preprocessed features are the most important for predict our target variable(s). For this dataset, it seems that the call duration and the number of employees in a specific bank.
+
+![raw-data-feature-importance.png](./images/raw-data-feature-importance.png)
+
+And for the preprocessed data:
+
+![preprocessed-data-feature-importance.png](./images/preprocessed-data-feature-importance.png)
+
+
+
+![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
 
 ### **3. Deploy the best model** 
 
-Deploying means that we are creating an endpoint (in this case, REST API) that allows us to interact with the HTTP API service. For this project, we will allow the HTTP API service to interact with the best AutoML model by sending POST requests to the endpoint.
+**Key point:** Deploying means that we are creating an endpoint (in this case, REST API) that allows us to interact with the HTTP API service. For this project, we will allow the HTTP API service to interact with the best AutoML model by sending POST requests to the endpoint.
 
 ### **4. Enable logging** 
 
-In Azure, we can enable logging by enabling Application Insights. Application Insights is a useful tool to detect anomalies and visualize performance of our deployed model. We can enable Application Insights when we are deploying our model, but we will enable it via our CLI for this project.
+**Key point:** In Azure, we can enable logging by enabling Application Insights. Application Insights is a useful tool to detect anomalies and visualize performance of our deployed model. We can enable Application Insights when we are deploying our model, but we will enable it via our CLI for this project.
 
 ### **5. Swagger Documentation** 
 
-Swagger is a framework for describing an API using a common language that everyone can understand. Azure provides a Swagger JSON file for deployed models that can look up in your IDE or in the Swagger UI. Any mistakes are flagged, and alternatives are suggested. At the heart of Swagger is its specification. The Swagger specification is the rulebook that standardizes API practices (how to define parameters, paths, responses, models, etc). And every other part of Swagger is just a way of appropriating or creating API documentation that works with these rules. Reference: [What is Swagger and Why Does it Matter?](https://blog.readme.com/what-is-swagger-and-why-it-matters/)
+**Key point:** Swagger is a framework for describing an API using a common language that everyone can understand. Azure provides a Swagger JSON file for deployed models that can look up in your IDE or in the Swagger UI. Any mistakes are flagged, and alternatives are suggested. At the heart of Swagger is its specification. The Swagger specification is the rulebook that standardizes API practices (how to define parameters, paths, responses, models, etc). And every other part of Swagger is just a way of appropriating or creating API documentation that works with these rules. Reference: [What is Swagger and Why Does it Matter?](https://blog.readme.com/what-is-swagger-and-why-it-matters/)
 
 ### **6. Consume model endpoints** 
 
-Here we perform model inference in our local CLI by using the REST endpoint URL and Primary Key (for authentication) of our deployed model.
+**Key point:** Here we perform model inference in our local CLI by using the REST endpoint URL and Primary Key (for authentication) of our deployed model.
 
 ### **7. Create and publish a pipeline** 
 
-An important part of MLOps is to automate workflows via Pipelines. For this project, we will be using a Pipeline to automate the entire process (minus step 4 and 5). Creating a pipeline via the Azure Python SDK is useful allows us to automate the process and share our steps with colleagues.
+**Key point:** An important part of MLOps is to automate workflows via Pipelines. For this project, we will be using a Pipeline to automate the entire process (minus step 4 and 5). Creating a pipeline via the Azure Python SDK is useful allows us to automate the process and share our steps with colleagues.
 
 ***
 
