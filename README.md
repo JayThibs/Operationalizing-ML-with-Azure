@@ -34,11 +34,12 @@ Our project will follow the following steps:
 ## Key Steps and Screenshots
 
    * [Step 1 - Authentication](#Step-1---Authentication)
-   * [Architectural Diagram](#Architectural-Diagram)
-   * [Key Steps and Screenshots](#Key-Steps-and-Screenshots)
-   * [Screen Recording](#Screen-Recording)
-   * [Comments and future improvements](#Comments-and-future-improvements)
-   * [References](#References)
+   * [Step 2 - Automated ML Experiment (AutoML)](#Step-2---Automated-ML-Experiment-(AutoML))
+   * [Step 3 - Deploy the best model](#Step-1---Authentication)
+   * [Step 4 - Enable logging](#Step-1---Authentication)
+   * [Step 5 - Swagger Documentation](#Step-1---Authentication)
+   * [Step 6 - Consume model endpoints](#Step-1---Authentication)
+   * [Step 7 - Create and publish a pipeline](#Step-1---Authentication)
 
 We will now go through the key steps of the entire project.
 
@@ -52,7 +53,7 @@ Here's a preview of the dataset we have loaded into AzureML and will be working 
 
 **Key point:** Authentication is important for giving users different levels of privileges. In our case, we are using the Udacity workspace, so we cannot create a Service Principal. Therefore, can skip this step.
 
-### **2. Automated ML Experiment (AutoML)** 
+### **Step 2 - Automated ML Experiment (AutoML)** 
 
 **Key point:** AutoML allows you to automatically run a series of different machine learning algorithms and parameters for you. In this project, we provide AutoML some custom configurations, run it, then choose the best model.
 
@@ -78,7 +79,7 @@ And for the preprocessed data:
 
 ![preprocessed-data-feature-importance.png](./images/preprocessed-data-feature-importance.png)
 
-### **3. Deploy the best model** 
+### **Step 3 - Deploy the best model** 
 
 **Key point:** Deploying means that we are creating an endpoint (in this case, REST API) that allows us to interact with the HTTP API service. For this project, we will allow the HTTP API service to interact with the best AutoML model by sending POST requests to the endpoint.
 
@@ -90,7 +91,7 @@ As we can see, Application Insights is enabled. This is something we do in the n
 
 Also, we can see the Swagger URI here. If you look at the end of the URI, you can see that it's actually linking to the swagger.json file. We will be using this file later to create the Swagger Documentation (step 5). Download it and put it in the swagger folder of our local project directory.
 
-### **4. Enable logging** 
+### **Step 4 - Enable logging** 
 
 **Key point:** In Azure, we can enable logging by enabling Application Insights. Application Insights is a useful tool to detect anomalies and visualize performance of our deployed model. We can enable Application Insights when we are deploying our model, but we will enable it via our CLI for this project.
 
@@ -107,7 +108,7 @@ Now that we've created our logs.py file, we can run it to enable Application Ins
 ![python-logs-dot-py.png](./images/python-logs-dot-py.png)
 
 
-### **5. Swagger Documentation** 
+### **Step 5 - Swagger Documentation** 
 
 **Key point:** Swagger is a framework for describing an API using a common language that everyone can understand. Azure provides a Swagger JSON file for deployed models that can look up in your IDE or in the Swagger UI. Any mistakes are flagged, and alternatives are suggested. At the heart of Swagger is its specification. The Swagger specification is the rulebook that standardizes API practices (how to define parameters, paths, responses, models, etc). And every other part of Swagger is just a way of appropriating or creating API documentation that works with these rules. Reference: [What is Swagger and Why Does it Matter?](https://blog.readme.com/what-is-swagger-and-why-it-matters/)
 
@@ -135,7 +136,7 @@ We can also open the `GET` and `POST` sections to see what we should expect from
 
 ![swagger-model-post-2.png](./images/swagger-model-post-2.png)
 
-### **6. Consume model endpoints** 
+### **Step 6 - Consume model endpoints** 
 
 **Key point:** Here we perform model inference in our local CLI by using the REST endpoint URL and Primary Key (for authentication) of our deployed model.
 
@@ -177,7 +178,7 @@ So, `benchmark.sh` contains the Apache Benchmark command we need to do the bench
 
 We can see that the mean time taken for each request is 110.258 ms, which is great and likely fast enough in a production environment.
 
-### **7. Create and publish a pipeline** 
+### **Step 7 - Create and publish a pipeline** 
 
 **Key point:** An important part of MLOps is to automate workflows via Pipelines. For this project, we will be using a Pipeline to automate the entire process (minus step 4 and 5). Creating a pipeline via the Azure Python SDK is useful allows us to automate the process and share our steps with colleagues.
 
