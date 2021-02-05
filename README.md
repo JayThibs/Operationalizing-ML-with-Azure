@@ -215,4 +215,4 @@ Here's a link to a video explaining the different parts of the project: [Operati
 
 ***
 
-![Back to Top](#operationalizing-machine-learning-in-azure)
+[Back to Top](#Operationalizing-Machine-Learning-in-Azure)
