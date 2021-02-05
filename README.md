@@ -33,7 +33,7 @@ Our project will follow the following steps:
 
 ## Key Steps and Screenshots
 
-   * [1. Authentication](#1.-Authentication*)
+   * [1. Authentication](#1.-Authentication)
    * [Architectural Diagram](#Architectural-Diagram)
    * [Key Steps and Screenshots](#Key-Steps-and-Screenshots)
    * [Screen Recording](#Screen-Recording)
