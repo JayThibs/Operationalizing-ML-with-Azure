@@ -5,8 +5,7 @@
    * [Architectural Diagram](#Architectural-Diagram)
    * [Key Steps and Screenshots](#Key-Steps-and-Screenshots)
    * [Screen Recording](#Screen-Recording)
-   * [Comments and future improvements](#Comments-and-future-improvements)
-   * [References](#References)
+   * [Future Improvements](#Future-Improvements)
 
 ***
 
@@ -182,10 +181,34 @@ We can see that the mean time taken for each request is 110.258 ms, which is gre
 
 **Key point:** An important part of MLOps is to automate workflows via Pipelines. For this project, we will be using a Pipeline to automate the entire process (minus step 4 and 5). Creating a pipeline via the Azure Python SDK is useful allows us to automate the process and share our steps with colleagues.
 
+We start by opening our python [notebook](https://github.com/JayThibs/Operationalizing-ML-with-Azure/blob/main/aml-pipelines-with-automated-machine-learning-step.ipynb) in Azure and running all of the cells. As we can see, we've submitted a pipeline run:
 
+![notebook-rundetails.png](./images/notebook-rundetails.png)
+
+If we go to the Pipelines page (click on the Pipelines icon in the sidebar), we can see that our pipeline run is active:
+
+![pipelines-view.png](./images/pipelines-view.png)
+
+Clicking on the Bankmarketing Train pipeline run:
+
+![active-pipeline.png](./images/active-pipeline.png)
+
+Once the pipeline has finished running, we have a pipeline REST endpoint that we can find in Experiments. We see that the status of the pipeline run is now complete:
+
+![pipeline-rest-endpoint.png](./images/pipeline-rest-endpoint.png)
+
+And there we are! We've now trained an AutoML model, and deployed it to create REST endpoint we can now interact with.
 
 ***
 
 ## Screen Recording
 
 Here's a link to a video explaining the different parts of the project: [Operationalizing ML Screencast - Jacques T](https://www.youtube.com/watch?v=mH5c6UD4-Vk&feature=youtu.be)
+
+***
+
+## Future Work
+
+* Fix the imbalance in the dataset.
+* We could interact with the model deployed via pipeline in step 7 of Key Steps. We could set a threshold for minimum acceptable model accuracy, use data which does not perform well with our current model, and kickstart a retraining process to take into account the more recent data (and reduce model drift).
+* We could use a custom model in addition to the best AutoML model and have our pipeline choose the best out of the two.
