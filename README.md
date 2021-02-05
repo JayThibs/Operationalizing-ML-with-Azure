@@ -81,6 +81,8 @@ By clicking the Deploy tab in our best model's page (Run 85), we deployed our mo
 
 As we can see, Application Insights is enabled. This is something we do in the next step. It is possible to deploy the model with Application Insights turned on, but we did it via our local command-line interface for this project.
 
+Also, we can see the Swagger URI here. If you look at the end of the URI, you can see that it's actually linking to the swagger.json file. We will be using this file later to create the Swagger Documentation (step 5). Download it and put it in the swagger folder of our local project directory.
+
 ### **4. Enable logging** 
 
 **Key point:** In Azure, we can enable logging by enabling Application Insights. Application Insights is a useful tool to detect anomalies and visualize performance of our deployed model. We can enable Application Insights when we are deploying our model, but we will enable it via our CLI for this project.
@@ -93,16 +95,26 @@ To enable Application Insights, we need to make sure to include the following li
 
 ![logs-dot-py.png](./images/logs-dot-py.png)
 
-Now that we've created our logs.py file, we can run it to enable Application Insights.
+Now that we've created our logs.py file, we can run it to enable Application Insights. We run it with: `python logs.py`.
 
 ![python-logs-dot-py.png](./images/python-logs-dot-py.png)
-
-![logs-dot-py.png](./images/logs-dot-py.png)
 
 
 ### **5. Swagger Documentation** 
 
 **Key point:** Swagger is a framework for describing an API using a common language that everyone can understand. Azure provides a Swagger JSON file for deployed models that can look up in your IDE or in the Swagger UI. Any mistakes are flagged, and alternatives are suggested. At the heart of Swagger is its specification. The Swagger specification is the rulebook that standardizes API practices (how to define parameters, paths, responses, models, etc). And every other part of Swagger is just a way of appropriating or creating API documentation that works with these rules. Reference: [What is Swagger and Why Does it Matter?](https://blog.readme.com/what-is-swagger-and-why-it-matters/)
+
+We will now be using the Swagger JSON file we downloaded earlier (in step 3) from the Endpoints section in Azure.
+
+![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
+
+![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
+
+![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
+
+![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
+
+![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
 
 ![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
 
