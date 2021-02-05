@@ -213,4 +213,6 @@ Here's a link to a video explaining the different parts of the project: [Operati
 * We could interact with the model deployed via pipeline in step 7 of Key Steps. We could set a threshold for minimum acceptable model accuracy, use data which does not perform well with our current model, and kickstart a retraining process to take into account the more recent data (and reduce model drift).
 * We could use a custom model in addition to the best AutoML model and have our pipeline choose the best out of the two.
 
-![Back to Top](https://github.com/JayThibs/Operationalizing-ML-with-Azure/README.md#Operationalizing-Machine-Learning-in-Azure)
+***
+
+![Back to Top](https://github.com/JayThibs/Operationalizing-ML-with-Azure/blob/main/README.md#operationalizing-machine-learning-in-azure)
