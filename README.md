@@ -160,11 +160,21 @@ Next, we will be benchmarking the HTTP API to test the response time for our dep
 
 (Ref: https://www.udacity.com/course/machine-learning-engineer-for-microsoft-azure-nanodegree--nd00333)
 
-In other words, we will use Apache Benchmark to do a load-test of our model. This is an important step to do when putting our model in production because we want to make sure that it doesn't take too long to receive prediction results and users have a great experience with your product or service. Note: Azure will timeout if the response time takes longer than sixty seconds.
+In other words, we will use Apache Benchmark to load-test our model. This is an important step to do when putting our model in production because we want to make sure that it doesn't take too long to receive prediction results and users have a great experience with your product or service. Note: Azure will timeout if the response time takes longer than sixty seconds.
+
+So, `benchmark.sh` contains the Apache Benchmark command we need to do the benchmark. The command will send 10 requests to the endpoint. To run the file, we enter: `bash benchmark.sh` and we get the following output:
+
+![bash-benchmark-dot-py-1.png](./images/bash-benchmark-dot-py-1.png)
+
+![bash-benchmark-dot-py-2.png](./images/bash-benchmark-dot-py-2.png)
+
+We can see that the mean time taken for each request is 110.258 ms, which is great and likely fast enough in a production environment.
 
 ### **7. Create and publish a pipeline** 
 
 **Key point:** An important part of MLOps is to automate workflows via Pipelines. For this project, we will be using a Pipeline to automate the entire process (minus step 4 and 5). Creating a pipeline via the Azure Python SDK is useful allows us to automate the process and share our steps with colleagues.
+
+
 
 ***
 
