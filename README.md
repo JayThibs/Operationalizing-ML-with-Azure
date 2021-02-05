@@ -138,7 +138,7 @@ The `endpoint.py` will allow use to feed data to the model, do inference, and re
 
 Here's what `endpoint.py` looks like:
 
-![]()
+![endpoint-py-preview.png](./images/endpoint-py-preview.png)
 
 We can see that there are two predictions that will be made.
 
@@ -152,7 +152,15 @@ Here's the `data.json` file that was created when running `endpoint.py`:
 
 ![data-dot-json.png](./images/data-dot-json.png)
 
+**Benchmarking the Endpoint**
 
+Next, we will be benchmarking the HTTP API to test the response time for our deployed model. *A benchmark is used to create a baseline or an acceptable performance measure.*
+
+*"Apache Benchmark is an easy and popular tool for benchmarking HTTP services."*
+
+(Ref: https://www.udacity.com/course/machine-learning-engineer-for-microsoft-azure-nanodegree--nd00333)
+
+In other words, we will use Apache Benchmark to do a load-test of our model. This is an important step to do when putting our model in production because we want to make sure that it doesn't take too long to receive prediction results and users have a great experience with your product or service. Note: Azure will timeout if the response time takes longer than sixty seconds.
 
 ### **7. Create and publish a pipeline** 
 
