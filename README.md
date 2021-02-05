@@ -202,7 +202,9 @@ And there we are! We've now trained an AutoML model, and deployed it to create R
 
 ## Screen Recording
 
-Here's a link to a video explaining the different parts of the project: [Operationalizing ML Screencast - Jacques T](https://www.youtube.com/watch?v=mH5c6UD4-Vk&feature=youtu.be)
+Here's a link to a video explaining the different parts of the project: 
+
+[Operationalizing ML Screencast - Jacques T](https://www.youtube.com/watch?v=mH5c6UD4-Vk&feature=youtu.be)
 
 ***
 
