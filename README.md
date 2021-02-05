@@ -104,23 +104,35 @@ Now that we've created our logs.py file, we can run it to enable Application Ins
 
 **Key point:** Swagger is a framework for describing an API using a common language that everyone can understand. Azure provides a Swagger JSON file for deployed models that can look up in your IDE or in the Swagger UI. Any mistakes are flagged, and alternatives are suggested. At the heart of Swagger is its specification. The Swagger specification is the rulebook that standardizes API practices (how to define parameters, paths, responses, models, etc). And every other part of Swagger is just a way of appropriating or creating API documentation that works with these rules. Reference: [What is Swagger and Why Does it Matter?](https://blog.readme.com/what-is-swagger-and-why-it-matters/)
 
-We will now be using the Swagger JSON file we downloaded earlier (in step 3) from the Endpoints section in Azure.
+We will now be using the Swagger JSON file we downloaded earlier (in step 3) from the Endpoints section in Azure. Make sure it is in the swagger folder.
 
-![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
+Now, we run `swagger.sh` and `serve.py`. Afterwards, we go in our browser and navigate to http://localhost/. We will see the following:
 
-![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
+![swagger-petstore.png](./images/swagger-petstore.png)
 
-![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
+This is an example documentation from Swagger. To see the documentation for our model endpoint, we type in the text box on top of the page: `http://localhost:8000/swagger.json`. We click Explore and see the following page:
 
-![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
+![swagger-model-endpoint-1.png](./images/swagger-model-endpoint-1.png)
 
-![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
+As we can see, this is the Swagger documentation for the model we deployed.
 
-![bank-marketing-dataset-preview.png](./images/bank-marketing-dataset-preview.png)
+If we open up the "Models" portion of the page, we see what the input (from the `data.json` file) and output data looks like:
+
+![swagger-model-endpoint-2.png](./images/swagger-model-endpoint-2.png)
+
+We can also open the `GET` and `POST` sections to see what we should expect from those methods:
+
+![swagger-model-get.png](./images/swagger-model-get.png)
+
+![swagger-model-post-1.png](./images/swagger-model-post-1.png)
+
+![swagger-model-post-2.png](./images/swagger-model-post-2.png)
 
 ### **6. Consume model endpoints** 
 
 **Key point:** Here we perform model inference in our local CLI by using the REST endpoint URL and Primary Key (for authentication) of our deployed model.
+
+
 
 ### **7. Create and publish a pipeline** 
 
