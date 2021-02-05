@@ -116,7 +116,7 @@ This is an example documentation from Swagger. To see the documentation for our 
 
 As we can see, this is the Swagger documentation for the model we deployed.
 
-If we open up the "Models" portion of the page, we see what the input (from the `data.json` file) and output data looks like:
+If we open up the "Models" portion of the page, we see what the input and output data looks like:
 
 ![swagger-model-endpoint-2.png](./images/swagger-model-endpoint-2.png)
 
@@ -131,6 +131,26 @@ We can also open the `GET` and `POST` sections to see what we should expect from
 ### **6. Consume model endpoints** 
 
 **Key point:** Here we perform model inference in our local CLI by using the REST endpoint URL and Primary Key (for authentication) of our deployed model.
+
+We will now be running the `endpoint.py` file. We make sure to include the proper `scoring_uri` and `key` to match the REST endpoint and primary key respectively. We can find them in the Consume tab of our model endpoint (in the Endpoint section). 
+
+The `endpoint.py` will allow use to feed data to the model, do inference, and receive a prediction. Looking inside the script, we see that we create a data file in json format and feed it to the model to receive the prediction.
+
+Here's what `endpoint.py` looks like:
+
+![]()
+
+We can see that there are two predictions that will be made.
+
+Now, if we run `python endpoint.py` in our command line, we get the following prediction based on the data we provided to the model via the REST endpoint:
+
+![python-endpoint-dot-py.png](./images/python-endpoint-dot-py.png)
+
+As we can see, the model predicted that client #1 will sign up with the bank while client #2 won't.
+
+Here's the `data.json` file that was created when running `endpoint.py`:
+
+![data-dot-json.png](./images/data-dot-json.png)
 
 
 
