@@ -27,8 +27,6 @@ Our project will follow the following steps:
 
 ![Steps to Operationalizing ML](./images/steps-to-operationalizing-ml.png)
 
-(Ref: https://www.udacity.com/course/machine-learning-engineer-for-microsoft-azure-nanodegree--nd00333)
-
 ***
 
 ## Key Steps and Screenshots
@@ -162,11 +160,9 @@ Here's the `data.json` file that was created when running `endpoint.py`:
 
 **Benchmarking the Endpoint**
 
-Next, we will be benchmarking the HTTP API to test the response time for our deployed model. *A benchmark is used to create a baseline or an acceptable performance measure.*
+Next, we will be benchmarking the HTTP API to test the response time for our deployed model. A benchmark is used to create a baseline or an acceptable performance measure.
 
-*"Apache Benchmark is an easy and popular tool for benchmarking HTTP services."*
-
-(Ref: https://www.udacity.com/course/machine-learning-engineer-for-microsoft-azure-nanodegree--nd00333)
+Apache Benchmark is an easy and popular tool for benchmarking HTTP services.
 
 In other words, we will use Apache Benchmark to load-test our model. This is an important step to do when putting our model in production because we want to make sure that it doesn't take too long to receive prediction results and users have a great experience with your product or service. Note: Azure will timeout if the response time takes longer than sixty seconds.
 
